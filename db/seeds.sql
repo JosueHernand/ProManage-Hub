@@ -14,3 +14,15 @@ VALUES ("Sales Lead", 34344334, 4),
     ("Legal Team Lead", 324, 3),
     ("Lawyer", 234234, 3),
     ("Customer Service", 100000000, 4);
+
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ("John", "Doe", 1, 5),
+    ("Mike", "Chan", 2, 1),
+    ("Ashley", "Rodriguez", 3, 5),
+    ("Kevin", "Tupik", 4, 3),
+    ("Kunal", "Singh", 5, 5),
+    ("Malia", "Brown", 6, 7),
+    ("Sarah", "Lourd", 7, 5),
+    ("Tom", "Allen", 8, 7),
+    ("Sam", "Kash", )
+    
