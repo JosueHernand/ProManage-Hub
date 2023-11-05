@@ -83,3 +83,21 @@ const viewAllEmployees = () => {
         });
     });
 };
+
+const roleDetails = () => {
+    return new Promise((resolve, reject) => {
+        const query = `
+            SELECT role.id, role.title, role.salary, departments.name AS department
+            FROM role
+            JOIN departments ON role.department_id = departments.id
+        `;
+        connection.query(query, (error, results) => {
+            if (error) {
+                console.error(error);
+                reject(error);
+            } else {
+                resolve(results);
+            }
+        });
+    });
+};
