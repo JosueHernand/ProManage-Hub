@@ -101,3 +101,13 @@ const roleDetails = () => {
         });
     });
 };
+
+module.exports = {
+  getEmployee,
+  getDepartment,
+  addDepartment,
+  addRole,
+  getRole,
+  viewAllEmployees,
+  roleDetails,
+};
