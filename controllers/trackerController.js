@@ -37,3 +37,15 @@ const addDepartment = (departmentName, callback) => {
       callback(null, result);
     });
 };
+
+const addRole = (roleName, roleSalary, departmentId, callback) => {
+    const sql = 'INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)';
+    connection.query(sql, [roleName, roleSalary, departmentId], (error, result) => {
+        if (error) {
+            console.error(error);
+            callback(error, null);
+            return;
+        }
+        callback(null, result);
+    });
+};
