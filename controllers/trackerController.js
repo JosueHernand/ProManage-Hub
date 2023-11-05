@@ -49,3 +49,16 @@ const addRole = (roleName, roleSalary, departmentId, callback) => {
         callback(null, result);
     });
 };
+
+const getRole = () => {
+    return new Promise((resolve, reject) => {
+        connection.query('SELECT * FROM role', (error, results) => {
+            if (error) {
+                console.error(error);
+                reject(error);
+            } else {
+                resolve(results);
+            }
+        });
+    });
+}
