@@ -25,3 +25,15 @@ const getDepartment = () => {
         });
     });
 };
+
+const addDepartment = (departmentName, callback) => {
+    const sql = 'INSERT INTO departments (name) VALUES (?)';
+    connection.query(sql, [departmentName], (error, result) => {
+      if (error) {
+        console.error(error);
+        callback(error, null);
+        return;
+      }
+      callback(null, result);
+    });
+};
