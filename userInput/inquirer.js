@@ -233,5 +233,19 @@ function init() {
                 init();
             });
         }
+
+        if (answers.questionList === 'Update Employee Role') {
+            const updateEmployeeRole = answers.updateEmployeeRole;
+            const roleSelect = answers.roleSelect;
+
+            connection.query('UPDATE employee SET role_id = ? WHERE id = ?', [roleSelect,updateEmployeeRole], (err, res) => {
+                if (err) {
+                    console.error(err);
+                } else {
+                    console.log('Employee role updated successfully');
+                }
+                init();
+            });
+        }
    });
 }
