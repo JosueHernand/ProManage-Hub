@@ -151,3 +151,10 @@ const question = [
         when: (answers) => answers.questionList === 'Add Department'
     },
 ];
+
+function init() {
+
+    inquirer.prompt([...mainQuestion, ...question]).then((answers) => {
+
+   });
+}
