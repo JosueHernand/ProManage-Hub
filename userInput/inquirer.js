@@ -247,5 +247,10 @@ function init() {
                 init();
             });
         }
+     
+        if (answers.questionList === 'Quit') {
+            console.log('Logging Out');
+            process.exit(0);
+        }
    });
 }
