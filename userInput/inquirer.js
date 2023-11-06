@@ -144,4 +144,10 @@ const question = [
             }
         }
     },
+    {
+        type: 'input',
+        name: 'departmentName',
+        message: 'What is the name of the department?',
+        when: (answers) => answers.questionList === 'Add Department'
+    },
 ];
