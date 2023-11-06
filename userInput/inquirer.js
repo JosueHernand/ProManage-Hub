@@ -190,5 +190,20 @@ function init() {
                 init();
             });
         }
+        
+        if (answers.questionList === 'Add Role') {
+
+            const roleName = answers.roleName;
+            const roleSalary = answers.roleSalary;
+            const selectedDepartmentName = answers.whatRoleDept;
+            connection.query('INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)', [roleName, roleSalary, selectedDepartmentName], (err, res) => {
+                if (err) {
+                    console.error(err);
+                } else {
+                    console.log('Role added successfully');
+                }
+                init();
+            });
+        }
    });
 }
