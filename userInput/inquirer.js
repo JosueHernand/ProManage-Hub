@@ -112,4 +112,10 @@ const question = [
             }
         }
     },
+    {
+        type: 'input',
+        name: 'roleName',
+        message: 'What is the name of the role?',
+        when: (answers) => answers.questionList === 'Add Role'
+    },
 ];
