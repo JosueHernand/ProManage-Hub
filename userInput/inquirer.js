@@ -181,5 +181,14 @@ function init() {
                 init();
             });
         }  
+
+        if (answers.questionList === 'View All Departments') {
+            console.log('Viewing All Departments');
+            connection.query('SELECT * FROM departments', (err, res) => {
+                if (err) throw err;
+                console.table(res);
+                init();
+            });
+        }
    });
 }
