@@ -221,5 +221,17 @@ function init() {
                 init();
             });
         }        
+
+        if (answers.questionList === 'Add Department') {
+            const departmentName = answers.departmentName;
+            addDepartment(departmentName, (error, result) => {
+                if (error) {
+                    console.error(error);
+                } else {
+                    console.log('Department added successfully');
+                }
+                init();
+            });
+        }
    });
 }
