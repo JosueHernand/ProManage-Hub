@@ -58,6 +58,18 @@ const question = [
         message: "Who is the employee's manager?",
         when: (answers) => answers.questionList === 'Add Employee',
         choices: async() => {
+            try {
+                const response = await getEmployee();
+                const employees = response;
+                const employeeChoices = employees.map (employee => ({
+                    name: `${employee.first_name} ${employee.last_name}`,
+                    value: employee.id,
+                }));
+                return employeeChoices;
+            } catch (error) {
+                console.log(error);
+                return [];
+            }
         }
     },
 ];
