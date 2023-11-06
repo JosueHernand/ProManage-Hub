@@ -3,7 +3,7 @@
 ## Description
 As a business owner, the motivation behind this project is to facilitate efficient viewing and management of company departments, roles, and employees. The project was built to provide a practical solution for business management needs, moving beyond being a mere homework assignment. It addresses the issue of time-consuming manual management by offering a user-friendly interface for handling department, role, and employee operations, making management more efficient. While building this project I learned how to interact with the database.
 
-## Table of Contents (Optional)
+## Table of Contents
 
 If your README is long, add a table of contents to make it easy for users to find what they need.
 
