@@ -254,3 +254,8 @@ function init() {
         }
    });
 }
+
+connection.connect((err) => {
+    if (err) throw err;
+    init();
+});
