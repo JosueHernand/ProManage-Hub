@@ -92,4 +92,24 @@ const question = [
             }
         }
     },
+    {
+        type: 'list',
+        name: 'roleSelect',
+        message: "Which role do you want to assign the selected employee?",
+        when: (answers) => answers.questionList === 'Update Employee Role',
+        choices: async() => {
+            try {
+                const response = await getRole();
+                const roles = response;
+                const roleChoices = roles.map (role => ({
+                    name: role.title,
+                    value: role.id,
+                }));
+                return roleChoices;
+            } catch (error) {
+                console.log(error);
+                return [];
+            }
+        }
+    },
 ];
