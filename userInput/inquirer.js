@@ -118,4 +118,10 @@ const question = [
         message: 'What is the name of the role?',
         when: (answers) => answers.questionList === 'Add Role'
     },
+    {
+        type: 'input',
+        name: 'roleSalary',
+        message: 'What is the salary of the role?',
+        when: (answers) => answers.questionList === 'Add Role'
+    },
 ];
