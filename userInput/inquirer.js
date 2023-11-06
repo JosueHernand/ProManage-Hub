@@ -168,5 +168,18 @@ function init() {
                 init();
             });
         }
+
+        if (answers.questionList === 'View All Roles') {
+            console.log('Viewing All Roles');
+            roleDetails()
+            .then((results) => {
+                console.table(results);
+                init();
+            })
+            .catch((error) => {
+                console.error(error);
+                init();
+            });
+        }  
    });
 }
