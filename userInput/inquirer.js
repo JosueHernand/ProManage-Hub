@@ -20,5 +20,32 @@ const mainQuestion = [
 
 
 const question = [
-
+    {
+        type: 'input',
+        name: 'firstnameEmpl',
+        message: "What is the employee's first name?",
+        when: (answers) => answers.questionList === 'Add Employee'
+    },
+    {
+        type: 'input',
+        name: 'lastnameEmpl',
+        message: "What is the employee's last name?",
+        when: (answers) => answers.questionList === 'Add Employee'
+    },
+    {
+        type: 'list',
+        name: 'emplRole',
+        message: "What is the employee's role?",
+        when: (answers) => answers.questionList === 'Add Employee',
+        choices: async() => {
+        }
+    },
+    {
+        type: 'list',
+        name: 'emplManager',
+        message: "Who is the employee's manager?",
+        when: (answers) => answers.questionList === 'Add Employee',
+        choices: async() => {
+        }
+    },
 ];
