@@ -124,4 +124,24 @@ const question = [
         message: 'What is the salary of the role?',
         when: (answers) => answers.questionList === 'Add Role'
     },
+    {
+        type: 'list',
+        name: 'whatRoleDept',
+        message: 'Which department does this role belong to?',
+        when: (answers) => answers.questionList === 'Add Role',
+        choices: async() => {
+            try {
+              const response = await getDepartment();
+              const departments = response;
+              const departmentChoices = departments.map (department => ({
+                name: department.name,
+                value: department.id,
+              }));
+              return departmentChoices;
+            }  catch (error) {
+              console.log(error);
+              return [];
+            }
+        }
+    },
 ];
