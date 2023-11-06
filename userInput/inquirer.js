@@ -156,5 +156,17 @@ function init() {
 
     inquirer.prompt([...mainQuestion, ...question]).then((answers) => {
 
+        if (answers.questionList === 'View All Employees') {
+            console.log('Viewing All Employees');
+            viewAllEmployees()
+            .then((results) => {
+                console.table(results);
+                init();
+            })
+            .catch((error) => {
+                console.error(error);
+                init();
+            });
+        }
    });
 }
