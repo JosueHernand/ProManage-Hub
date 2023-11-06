@@ -205,5 +205,21 @@ function init() {
                 init();
             });
         }
+
+        if (answers.questionList === 'Add Employee') {
+            const firstnameEmpl = answers.firstnameEmpl;
+            const lastnameEmpl = answers.lastnameEmpl;
+            const selectRole = answers.emplRole;
+            const selectManager = answers.emplManager;
+        
+            connection.query('INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)', [firstnameEmpl, lastnameEmpl, selectRole, selectManager], (err, res) => {
+                if (err) {
+                    console.error(err);
+                } else {
+                    console.log('Employee added successfully');
+                }
+                init();
+            });
+        }        
    });
 }
